@@ -14,4 +14,8 @@ build blockchain with fabric
 export PATH=$PWD/bin:$PATH
 ```
 
-# #
+## 3\. 生成MSP证书和创世块等文件
+
+```
+./fabric-scripts/hlfv1/composer/generateMaterial.sh
+```

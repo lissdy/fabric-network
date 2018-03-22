@@ -6,13 +6,15 @@ set -ev
 #Detect architecture
 ARCH=`uname -m`
 
+VERSION='1.1.0' # fabric v1.1.0 is using
+
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #
 
-ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml down
-ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml up -d
+ARCH=$ARCH VERSION=$VERSION docker-compose -f "${DIR}"/composer/docker-compose.yml down
+ARCH=$ARCH VERSION=$VERSION docker-compose -f "${DIR}"/composer/docker-compose.yml up -d
 
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
